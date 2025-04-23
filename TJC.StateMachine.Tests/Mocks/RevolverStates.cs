@@ -3,6 +3,6 @@
     internal enum RevolverStates
     {
         Loaded,
-        Empty
+        Empty,
     }
 }
