@@ -7,7 +7,7 @@
 [![License](https://img.shields.io/github/license/TJC-Tools/TJC.StateMachine.svg)](LICENSE)
 
 [![tests](https://github.com/TJC-Tools/TJC.StateMachine/actions/workflows/ct-matrix.yml/badge.svg)](https://github.com/TJC-Tools/TJC.StateMachine/actions/workflows/ct-matrix.yml)
-[![codecov](https://codecov.io/gh/TJC-Tools/TJC.StateMachine/graph/badge.svg?token=StateMachine_CODECOV_TOKEN)](https://codecov.io/gh/TJC-Tools/TJC.StateMachine)
+[![codecov](https://codecov.io/gh/TJC-Tools/TJC.StateMachine/graph/badge.svg?token=ZwhQB7Ku8u)](https://codecov.io/gh/TJC-Tools/TJC.StateMachine)
 
 ## Documentation
 - [Changelog](CHANGELOG.md)
