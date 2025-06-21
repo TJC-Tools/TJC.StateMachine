@@ -57,5 +57,42 @@ namespace TJC.StateMachine.Tests.Tests
             revolver.Reload();
             Assert.AreEqual(6, revolver.BulletsLoaded);
         }
+
+        [TestMethod]
+        public void EnsureEmptyingChangesStateAndReloadingChangesStateAgain()
+        {
+            var revolver = new RevolverMock();
+
+            Assert.AreEqual<uint>(0, revolver.StateChanges);
+
+            revolver.TryShoot();
+            revolver.TryShoot();
+            revolver.TryShoot();
+            revolver.TryShoot();
+            revolver.TryShoot();
+            revolver.TryShoot();
+
+            Assert.AreEqual<uint>(1, revolver.StateChanges);
+
+            revolver.Reload();
+
+            Assert.AreEqual<uint>(2, revolver.StateChanges);
+
+        }
+
+        [TestMethod]
+        public void EnsureReloadingMultipleTimesDoesNotChangeState()
+        {
+            var revolver = new RevolverMock();
+
+            Assert.AreEqual<uint>(0, revolver.StateChanges);
+
+            revolver.Reload();
+            revolver.Reload();
+            revolver.Reload();
+
+            Assert.AreEqual<uint>(0, revolver.StateChanges);
+
+        }
     }
 }

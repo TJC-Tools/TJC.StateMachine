@@ -5,6 +5,8 @@
     {
         public int BulletsLoaded { get; private set; } = 6;
 
+        internal uint StateChanges = 0;
+
         public bool TryShoot()
         {
             switch (State)
@@ -25,6 +27,11 @@
         {
             BulletsLoaded = 6;
             State = RevolverStates.Loaded;
+        }
+
+        protected override void OnStateChanged()
+        {
+            StateChanges++;
         }
     }
 }
