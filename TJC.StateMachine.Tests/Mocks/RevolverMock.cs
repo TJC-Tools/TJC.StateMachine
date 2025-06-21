@@ -31,7 +31,6 @@
 
         protected override void OnStateChanged()
         {
-            base.OnStateChanged();
             StateChanges++;
         }
     }
