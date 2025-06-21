@@ -27,10 +27,8 @@
         /// <summary>
         /// Called on state change.
         /// Can be used to add tracing &amp; debugging.
-        /// Should not be used to notify state.
+        /// Should not be used to notify of state changes externally.
         /// </summary>
-        protected virtual void OnStateChanged()
-        {
-        }
+        protected abstract void OnStateChanged();
     }
 }
