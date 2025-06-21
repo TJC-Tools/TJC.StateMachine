@@ -44,7 +44,11 @@
     </AssemblyAttribute>
   </ItemGroup>
   <!-- TASKS -->
-  <UsingTask TaskName="ReadFileContent" TaskFactory="RoslynCodeTaskFactory" AssemblyName="Microsoft.Build.Tasks.Core">
+  <UsingTask
+    TaskName="ReadFileContent"
+    TaskFactory="RoslynCodeTaskFactory"
+    AssemblyName="Microsoft.Build.Tasks.Core"
+  >
     <ParameterGroup>
       <FilePath ParameterType="System.String" Required="true" />
       <Content Output="true" ParameterType="System.String" />
@@ -58,7 +62,11 @@
       </Code>
     </Task>
   </UsingTask>
-  <UsingTask TaskName="AppendNewLineAndFile" TaskFactory="RoslynCodeTaskFactory" AssemblyName="Microsoft.Build.Tasks.Core">
+  <UsingTask
+    TaskName="AppendNewLineAndFile"
+    TaskFactory="RoslynCodeTaskFactory"
+    AssemblyName="Microsoft.Build.Tasks.Core"
+  >
     <ParameterGroup>
       <File1 ParameterType="System.String" Required="true" />
       <File2 ParameterType="System.String" Required="true" />
@@ -77,7 +85,7 @@
         ]]>
       </Code>
     </Task>
-  </UsingTask>	
+  </UsingTask>
   <!-- PRE-PACK -->
   <Target Name="CustomSetup" BeforeTargets="_IntermediatePack">
     <Message Text="=== CUSTOM SETUP ===" Importance="high" />
@@ -99,6 +107,11 @@
   <!-- Cleanup License File -->
   <Target Name="RestoreLicenseFile">
     <Message Text="Restore License File Contents" Importance="high" />
-    <WriteLinesToFile File="..\LICENSE" Lines="$(OriginalLicenseLines)" Overwrite="true" Encoding="UTF-8" />
+    <WriteLinesToFile
+      File="..\LICENSE"
+      Lines="$(OriginalLicenseLines)"
+      Overwrite="true"
+      Encoding="UTF-8"
+    />
   </Target>
 </Project>
