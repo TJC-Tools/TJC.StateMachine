@@ -77,7 +77,6 @@ namespace TJC.StateMachine.Tests.Tests
             revolver.Reload();
 
             Assert.AreEqual<uint>(2, revolver.StateChanges);
-
         }
 
         [TestMethod]
@@ -92,7 +91,6 @@ namespace TJC.StateMachine.Tests.Tests
             revolver.Reload();
 
             Assert.AreEqual<uint>(0, revolver.StateChanges);
-
         }
     }
 }
