@@ -29,8 +29,6 @@
         /// Can be used to add tracing &amp; debugging.
         /// Should not be used to notify state.
         /// </summary>
-        protected virtual void OnStateChanged()
-        {
-        }
+        protected virtual void OnStateChanged() { }
     }
 }
