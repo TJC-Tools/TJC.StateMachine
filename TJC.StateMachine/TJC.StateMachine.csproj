@@ -8,7 +8,7 @@
     <Description>State Machine Base</Description>
     <Authors>Tyler Carrol</Authors>
     <PackageReadmeFile>README.md</PackageReadmeFile>
-    <PackageLicenseFile>LICENSE</PackageLicenseFile>
+    <PackageLicenseExpression>MIT</PackageLicenseExpression>
     <PackageReleaseNotes>$([System.IO.File]::ReadAllText("$(MSBuildProjectDirectory)/../CHANGELOG.md"))</PackageReleaseNotes>
     <RepositoryUrl>https://github.com/TJC-Tools/TJC.StateMachine</RepositoryUrl>
     <GenerateDocumentationFile>true</GenerateDocumentationFile>
