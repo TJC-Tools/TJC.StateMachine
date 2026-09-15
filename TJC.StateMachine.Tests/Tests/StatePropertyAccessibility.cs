@@ -3,7 +3,6 @@ using TJC.StateMachine.Tests.Mocks;
 
 namespace TJC.StateMachine.Tests.Tests
 {
-    
     public class StatePropertyAccessibility
     {
         [Fact]
