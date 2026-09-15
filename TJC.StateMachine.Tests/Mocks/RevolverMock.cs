@@ -1,4 +1,4 @@
-﻿namespace TJC.StateMachine.Tests.Mocks
+namespace TJC.StateMachine.Tests.Mocks
 {
     internal class RevolverMock() : StateMachineBase<RevolverStates>(RevolverStates.Loaded)
     {

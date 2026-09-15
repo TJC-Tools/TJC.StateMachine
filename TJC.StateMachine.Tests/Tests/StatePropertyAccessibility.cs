@@ -3,30 +3,30 @@ using TJC.StateMachine.Tests.Mocks;
 
 namespace TJC.StateMachine.Tests.Tests
 {
-    [TestClass]
+    
     public class StatePropertyAccessibility
     {
-        [TestMethod]
+        [Fact]
         public void EnsurePropertyStateIsNotPubliclyAccessible()
         {
             var prop = typeof(StateMachineBase<RevolverStates>).GetProperty(
                 "State",
                 BindingFlags.Instance | BindingFlags.Public
             );
-            Assert.IsNull(prop);
+            Assert.Null(prop);
         }
 
-        [TestMethod]
+        [Fact]
         public void EnsurePropertyStateIsProtectedAccessible()
         {
             var prop = typeof(StateMachineBase<RevolverStates>).GetProperty(
                 "State",
                 BindingFlags.Instance | BindingFlags.NonPublic
             );
-            Assert.IsNotNull(prop);
+            Assert.NotNull(prop);
             var getter = prop.GetMethod;
-            Assert.IsNotNull(getter);
-            Assert.IsTrue(getter.IsFamily);
+            Assert.NotNull(getter);
+            Assert.True(getter.IsFamily);
         }
     }
 }

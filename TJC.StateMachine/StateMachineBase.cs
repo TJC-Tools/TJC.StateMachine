@@ -1,4 +1,4 @@
-﻿namespace TJC.StateMachine
+namespace TJC.StateMachine
 {
     /// <summary>
     /// State machine pattern base class.

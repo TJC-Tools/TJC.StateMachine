@@ -1,69 +1,69 @@
-﻿using TJC.StateMachine.Tests.Mocks;
+using TJC.StateMachine.Tests.Mocks;
 
 namespace TJC.StateMachine.Tests.Tests
 {
-    [TestClass]
+    
     public class RevolverMockTests
     {
-        [TestMethod]
+        [Fact]
         public void EnsureRevolverStartsFull()
         {
             var revolver = new RevolverMock();
-            Assert.AreEqual(6, revolver.BulletsLoaded);
+            Assert.Equal(6, revolver.BulletsLoaded);
         }
 
-        [TestMethod]
+        [Fact]
         public void EnsureRevolverShootingLowersBulletsToZeroThenRequiresReloading()
         {
             var revolver = new RevolverMock();
 
             var result = revolver.TryShoot();
-            Assert.IsTrue(result);
-            Assert.AreEqual(5, revolver.BulletsLoaded);
+            Assert.True(result);
+            Assert.Equal(5, revolver.BulletsLoaded);
 
             result = revolver.TryShoot();
-            Assert.IsTrue(result);
-            Assert.AreEqual(4, revolver.BulletsLoaded);
+            Assert.True(result);
+            Assert.Equal(4, revolver.BulletsLoaded);
 
             result = revolver.TryShoot();
-            Assert.IsTrue(result);
-            Assert.AreEqual(3, revolver.BulletsLoaded);
+            Assert.True(result);
+            Assert.Equal(3, revolver.BulletsLoaded);
 
             result = revolver.TryShoot();
-            Assert.IsTrue(result);
-            Assert.AreEqual(2, revolver.BulletsLoaded);
+            Assert.True(result);
+            Assert.Equal(2, revolver.BulletsLoaded);
 
             result = revolver.TryShoot();
-            Assert.IsTrue(result);
-            Assert.AreEqual(1, revolver.BulletsLoaded);
+            Assert.True(result);
+            Assert.Equal(1, revolver.BulletsLoaded);
 
             result = revolver.TryShoot();
-            Assert.IsTrue(result);
-            Assert.AreEqual(0, revolver.BulletsLoaded);
+            Assert.True(result);
+            Assert.Equal(0, revolver.BulletsLoaded);
 
             result = revolver.TryShoot();
-            Assert.IsFalse(result);
-            Assert.AreEqual(0, revolver.BulletsLoaded);
+            Assert.False(result);
+            Assert.Equal(0, revolver.BulletsLoaded);
         }
 
-        [TestMethod]
+        [Fact]
         public void EnsureReloadingResetsBulletsTo6()
         {
             var revolver = new RevolverMock();
 
-            Assert.AreEqual(6, revolver.BulletsLoaded);
+            Assert.Equal(6, revolver.BulletsLoaded);
             revolver.TryShoot();
-            Assert.AreEqual(5, revolver.BulletsLoaded);
+            Assert.Equal(5, revolver.BulletsLoaded);
             revolver.Reload();
-            Assert.AreEqual(6, revolver.BulletsLoaded);
+            Assert.Equal(6, revolver.BulletsLoaded);
         }
 
-        [TestMethod]
+        [Fact]
         public void EnsureEmptyingChangesStateAndReloadingChangesStateAgain()
         {
             var revolver = new RevolverMock();
 
-            Assert.AreEqual<uint>(0, revolver.StateChanges);
+            Assert.Equal<uint>(0, revolver.StateChanges);
 
             revolver.TryShoot();
             revolver.TryShoot();
@@ -72,25 +72,25 @@ namespace TJC.StateMachine.Tests.Tests
             revolver.TryShoot();
             revolver.TryShoot();
 
-            Assert.AreEqual<uint>(1, revolver.StateChanges);
+            Assert.Equal<uint>(1, revolver.StateChanges);
 
             revolver.Reload();
 
-            Assert.AreEqual<uint>(2, revolver.StateChanges);
+            Assert.Equal<uint>(2, revolver.StateChanges);
         }
 
-        [TestMethod]
+        [Fact]
         public void EnsureReloadingMultipleTimesDoesNotChangeState()
         {
             var revolver = new RevolverMock();
 
-            Assert.AreEqual<uint>(0, revolver.StateChanges);
+            Assert.Equal<uint>(0, revolver.StateChanges);
 
             revolver.Reload();
             revolver.Reload();
             revolver.Reload();
 
-            Assert.AreEqual<uint>(0, revolver.StateChanges);
+            Assert.Equal<uint>(0, revolver.StateChanges);
         }
     }
 }
